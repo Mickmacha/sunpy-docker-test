@@ -57,9 +57,3 @@ RUN pip install --no-cache-dir \
 
 
 RUN pip install --no-cache-dir --no-deps -e .
-
-
-
-#test command
-
-CMD ["pytest", "sunpy/time/tests/test_time.py", "-v"]
