@@ -41,7 +41,9 @@ RUN pip install --no-cache-dir \
 	"pyerfa>=2.0.1.1" \
 
 	"requests>=2.32.1" \  
-
+	
+	pandas>=2.2.0 \
+	
 	"pytest>=7.4.0" \
 
 	"pytest-astropy>=0.11.0" \
