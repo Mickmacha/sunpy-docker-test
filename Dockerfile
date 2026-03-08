@@ -47,6 +47,8 @@ RUN pip install --no-cache-dir \
 	"pytest-astropy>=0.11.0" \
 
 	"pytest-mpl>=0.18.0" \
+	
+	"pytest-xdist" \
 
 	"hvpy>=1.1.0" \
 
