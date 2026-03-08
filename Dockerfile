@@ -42,7 +42,7 @@ RUN pip install --no-cache-dir \
 
 	"requests>=2.32.1" \  
 	
-	pandas>=2.2.0 \
+	"pandas>=2.2.0" \
 	
 	"pytest>=7.4.0" \
 
