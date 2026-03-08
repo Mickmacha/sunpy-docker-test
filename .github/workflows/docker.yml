@@ -1,0 +1,29 @@
+name: Build and Test SunPy
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Build Docker image
+        run: docker build -t sunpy-test .
+
+      - name: Run tests
+        run: docker run --rm sunpy-test
+```
+- Click `Commit changes`
+
+**Step 4 — Watch it run**
+- Click the `Actions` tab in your repo
+- You'll see the workflow running
+- Click into it to see live logs of the build and test output
+
+**Step 5 — Read the results**
+```
+✅ Green  = build succeeded and tests passed
+❌ Red    = something failed, click to see exact error logs
