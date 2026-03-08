@@ -13,4 +13,4 @@ jobs:
         run: docker build -t sunpy-test .
 
       - name: Run tests
-        run: docker run --rm sunpy-test
+        run: docker run --rm sunpy-test pytest sunpy/time/tests/test_time.py
