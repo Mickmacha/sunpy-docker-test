@@ -13,7 +13,7 @@ RUN git clone https://github.com/loft-br/xgboost-survival-embeddings.git /xgbse
 WORKDIR /xgbse
 
 # Checkout to specific commit (replace with desired commit hash)
-ARG COMMIT_HASH=HEAD
+ARG COMMIT_HASH=044a5e842b10b92803ed54e5e3bf977922c2c9fb
 RUN git checkout ${COMMIT_HASH}
 
 # Install dependencies with pinned versions
