@@ -6,15 +6,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
-
-      - name: Get commit hash
-        id: commit
-        run: echo "hash=$(git rev-parse HEAD)" >> $GITHUB_OUTPUT
-
       - name: Build Docker image
-        run: docker build -f Dockerfile.ci --build-arg COMMIT_HASH=${{ steps.commit.outputs.hash }} -t xgbse-test .
+        run: docker build -f Dockerfile.ci -t xgbse-test .
 
       - name: Run tests
         run: docker run --rm xgbse-test
