@@ -1,0 +1,20 @@
+# CI Dockerfile for xgbse - used by GitHub Actions
+FROM python:3.11-slim
+
+WORKDIR /xgbse
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y --no-install-recommends \
+	git \
+	build-essential \
+	&& rm -rf /var/lib/apt/lists/*
+
+# Clone xgbse repository and checkout specific commit
+RUN git clone https://github.com/loft-br/xgboost-survival-embeddings.git . && \
+	git checkout 044a5e842b10b92803ed54e5e3bf977922c2c9fb
+
+# Install dependencies from setup.py with dev extras
+RUN pip install --no-cache-dir -e ".[dev]"
+
+# Run tests
+RUN pytest --cov-report term-missing --cov=xgbse tests/
